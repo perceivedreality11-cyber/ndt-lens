@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ndt-lens"
+version = "0.3.0"
+description = "Human-in-the-loop X-ray weld inspection with YOLO training and reviewed auto-labeling"
+readme = "README.md"
+requires-python = ">=3.10"
+license = "AGPL-3.0-only"
+keywords = ["computer-vision", "object-detection", "ndt", "xray", "yolo", "annotation"]
+dependencies = ["numpy>=1.26,<3", "Pillow>=10.1,<13", "opencv-python-headless>=4.9,<6", "PyYAML>=6,<7"]
+
+[project.urls]
+Homepage = "https://github.com/perceivedreality11-cyber/ndt-lens"
+Issues = "https://github.com/perceivedreality11-cyber/ndt-lens/issues"
+
+[project.optional-dependencies]
+ui = ["streamlit>=1.50,<2", "pandas>=2,<4", "psutil>=5.9,<8"]
+train = ["ultralytics>=8.3,<9"]
+dev = ["pytest>=8,<10", "ruff>=0.9,<1"]
+
+[project.scripts]
+ndt = "ndt.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+ndt = ["box_editor/*.html"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 110
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F", "I"]

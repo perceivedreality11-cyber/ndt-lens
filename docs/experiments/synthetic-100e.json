@@ -1,0 +1,128 @@
+{
+  "synthetic_only": true,
+  "note": "Procedural phantoms; results do not establish industrial defect performance.",
+  "started_utc": "2026-10-15T08:08:51.352319+00:00",
+  "duration_seconds": 187.632095,
+  "seed": 2026,
+  "initialization": "yolo11n.yaml (random initialization, no pretrained download)",
+  "epochs": 100,
+  "image_size": 256,
+  "batch": 8,
+  "device": "cpu",
+  "split_counts": {
+    "train": {
+      "images": 84,
+      "objects": 204,
+      "negative_images": 16
+    },
+    "val": {
+      "images": 18,
+      "objects": 39,
+      "negative_images": 5
+    },
+    "test": {
+      "images": 18,
+      "objects": 45,
+      "negative_images": 3
+    }
+  },
+  "environment": {
+    "python": "3.14.6",
+    "system": "Windows",
+    "machine": "AMD64",
+    "packages": {
+      "ndt-lens": null,
+      "numpy": "2.5.1",
+      "Pillow": "12.3.0",
+      "opencv-python-headless": "5.0.0.93",
+      "PyYAML": "6.0.3",
+      "streamlit": "1.66.0",
+      "torch": "2.13.0",
+      "ultralytics": "8.4.177"
+    }
+  },
+  "confidence_threshold": 0.25,
+  "heuristic": {
+    "images": 18,
+    "iou_threshold": 0.5,
+    "micro": {
+      "tp": 44,
+      "fp": 0,
+      "fn": 1,
+      "precision": 1.0,
+      "recall": 0.9777777777777777,
+      "f1": 0.9887640449438202
+    },
+    "per_class": {
+      "porosity": {
+        "tp": 15,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "crack": {
+        "tp": 14,
+        "fp": 0,
+        "fn": 1,
+        "precision": 1.0,
+        "recall": 0.9333333333333333,
+        "f1": 0.9655172413793104
+      },
+      "inclusion": {
+        "tp": 15,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    }
+  },
+  "yolo": {
+    "images": 18,
+    "iou_threshold": 0.5,
+    "micro": {
+      "tp": 45,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "per_class": {
+      "porosity": {
+        "tp": 15,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "crack": {
+        "tp": 15,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "inclusion": {
+        "tp": 15,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    }
+  },
+  "official_yolo_test_metrics": {
+    "metrics/precision(B)": 0.9894947578159993,
+    "metrics/recall(B)": 1.0,
+    "metrics/mAP50(B)": 0.995,
+    "metrics/mAP50-95(B)": 0.7565935989935989,
+    "fitness": 0.7565935989935989
+  }
+}

@@ -1,0 +1,21 @@
+name: Bug report
+description: Report a reproducible problem with annotation, training, or inference.
+body:
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected and actual behavior
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: Include command and parameters. Use synthetic data when possible.
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment and error log
+      description: OS, Python, dependency versions, CPU/GPU. Remove private image paths and credentials.
