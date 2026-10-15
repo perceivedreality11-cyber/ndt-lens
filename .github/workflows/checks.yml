@@ -27,4 +27,4 @@ jobs:
       - run: ndt check-data --data data/ci/dataset.yaml
       - run: ndt demo-workspace --output data/workbench-ci
       - run: ndt predict --demo --source data/ci/images/train/synthetic_00007.png --output outputs/ci
-      - run: python -m pip wheel --no-deps --no-build-isolation --no-cache-dir . --wheel-dir dist
+      - run: python -m pip wheel --no-deps --no-cache-dir . --wheel-dir dist

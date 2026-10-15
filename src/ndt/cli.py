@@ -1,6 +1,7 @@
 """Command-line entry points. Run `ndt --help`."""
 
 import argparse
+import sys
 from pathlib import Path
 
 import yaml
@@ -12,6 +13,11 @@ from ndt.synthetic import make_dataset
 
 
 def main() -> None:
+    # Redirected Windows terminals may use a legacy code page. Reports and
+    # Chinese diagnostics have a stable UTF-8 encoding across platforms.
+    for stream in (sys.stdout, sys.stderr):
+        if hasattr(stream, "reconfigure"):
+            stream.reconfigure(encoding="utf-8", errors="backslashreplace")
     parser = argparse.ArgumentParser(description="工业 X 射线缺陷识别研究工具")
     commands = parser.add_subparsers(dest="command", required=True)
     demo = commands.add_parser("demo-data", help="生成合成 YOLO 数据，仅用于流程验证")
