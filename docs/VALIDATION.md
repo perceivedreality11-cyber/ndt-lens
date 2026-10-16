@@ -32,3 +32,16 @@ GitHub Actions 配置 Windows / Linux × Python 3.10 / 3.12，执行格式、静
 ## CI 首轮发现并修复的问题
 
 首轮 GitHub Actions 的功能测试通过，但 Windows 的 `demo-workspace` 命令受默认代码页影响，无法输出中文；Python 3.12 的 wheel 命令因禁用构建隔离而无法找到 setuptools 后端。分别通过 CLI 显式 UTF-8 输出及恢复 PEP 517 构建隔离修复，并增加旧终端编码回归测试。修复后的线上结果以最新 Actions 记录为准。
+
+## 线上验证完成
+
+2026-10-16 核验：[GitHub Actions 38706067004](https://github.com/perceivedreality11-cyber/ndt-lens/actions/runs/38706067004) 全部通过，对应提交 `c77ae10d6da50b74eb1f996ef1c0ea9751ef66cc`。
+
+| 环境 | 结果 |
+|---|---|
+| Ubuntu / Python 3.10 | 通过 |
+| Ubuntu / Python 3.12 | 通过 |
+| Windows / Python 3.10 | 通过 |
+| Windows / Python 3.12 | 通过 |
+
+每组均完成依赖安装、Ruff 格式与静态检查、35 项测试、合成数据生成与校验、演示工作空间创建、命令行预测及 wheel 构建。此前发现的终端编码与构建隔离问题已在实际托管 runner 上验证修复。

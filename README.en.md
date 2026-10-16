@@ -4,7 +4,7 @@
 
 [中文](README.md) · [Architecture](docs/ARCHITECTURE.md) · [Experiments](docs/EXPERIMENTS.md)
 
-![Procedural phantom and morphology baseline](docs/demo.png)
+![NDT Lens annotation workbench](docs/workbench.jpg)
 
 NDT Lens connects image import, bounding-box annotation, human confirmation, YOLO training, automatic annotation and review. Initial classes are porosity, crack and inclusion.
 
@@ -31,7 +31,7 @@ Install `python -m pip install -e ".[train]"` for YOLO. The demo workspace defau
 - Background training processes, logs, model provenance and failure detection.
 - Portable YOLO exports containing images without overlays, labels, config and review manifests.
 - A reproducible morphology-versus-YOLO experiment with one-to-one IoU matching and independent test evaluation.
-- pytest and Streamlit page tests; GitHub Actions configured for Windows/Linux and Python 3.10/3.12.
+- 35 automated tests, including Streamlit page tests; installation, CLI workflows and packaging verified on Windows/Linux and Python 3.10/3.12 through GitHub Actions.
 
 ```bash
 python -m pip install -e ".[train]"
